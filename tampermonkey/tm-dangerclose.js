@@ -9,8 +9,16 @@
 // @grant        none
 // ==/UserScript==
 
+
+
 const observer = new MutationObserver((_) => {
     if (document.querySelector('#settings-tab').classList.contains('selected')) {
+        if (document.URL.includes('=repositories')) {
+            $('.Label--secondary').each((_, el) => {
+                if (el.innerText === 'Public') el.style.background = '#451313'
+                else el.style.background = '#003008'
+            })
+        }
         let inputElements = document.querySelectorAll('.form-control.input-block');
         if (inputElements.length > 0) {
             const url = document.URL.split('/')
