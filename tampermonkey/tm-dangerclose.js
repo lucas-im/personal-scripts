@@ -16,21 +16,21 @@
 const observer = new MutationObserver((_) => {
     if (document.URL.includes('=repositories')) {
         $('.Label--secondary').each((_, el) => {
-            if (el.innerText === 'Public') el.style.background = '#451313'
-            else el.style.background = '#003008'
+            if (el.innerText === 'Public') el.style.background = '#003008'
+            else el.style.background = '#451313'
         })
     }
     if (document.querySelector('#settings-tab').classList.contains('selected')) {
 
-        let inputElements = document.querySelectorAll('.form-control.input-block');
+        let inputElements = document.querySelectorAll('.form-control.input-block')
         if (inputElements.length > 0) {
             const url = document.URL.split('/')
             inputElements.forEach((inputElement) => {
                 if (inputElement != null && !inputElement.className.includes('js-synced-repo-owner-input')) {
-                    inputElement.value = url[url.length - 3] + '/' + url[url.length - 2];
+                    inputElement.value = url[url.length - 3] + '/' + url[url.length - 2]
                 }
             })
-            let inputs = document.querySelectorAll('.btn.btn-block.btn-danger');
+            let inputs = document.querySelectorAll('.btn.btn-block.btn-danger')
             inputs.forEach((input) => {
                 input.removeAttribute('disabled');
             })
@@ -41,4 +41,4 @@ const config = {
     childList: true,
     subtree: true
 }
-observer.observe(document, config);
+observer.observe(document, config)

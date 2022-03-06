@@ -13,7 +13,7 @@
 
 
 
-if($('.profile-gate-label')[0] !== null) {
+if ($('.profile-gate-label')[0] !== null) {
     $('.profile-icon')[0].click()
 
 }
@@ -24,4 +24,4 @@ const config = {
     childList: true,
     subtree: true
 }
-observer.observe(document, config);
+observer.observe(document, config)
